@@ -2,7 +2,7 @@
 using namespace std;
 
 class Node{
-public: 
+public:
     int data;
     Node *next;
 
@@ -19,22 +19,23 @@ void print_LL(Node *head){
     }
 }
 
-Node* delete_ith_node(Node *head, int i){
+Node* insert_node_at_ith_pos(Node *head, int i, int data){
     if(i<0){
-        cout << "Invalid Index" << endl;
+        cout << "Invalid index" << endl;
         return head;
     }
     else if(i==0){
-        Node *temp = head;
-        head = head->next;
-        delete temp;
+        Node *n = new Node(data);
+        n->next = head;
+        head = n;
         return head;
     }
     else{
         for(int j=0; j<i-1;j++){
-            head = head->next;
+            Node *n = new Node(data);
+            n->next = head->next;
+            head->next =n;
         }
-        head->next->next;
     }
 }
 
@@ -51,6 +52,6 @@ int main(){
     n2.next = &n3;
     n3.next = &n4;
     n4.next = &n5;
-    delete_ith_node(head,2);
-    print_LL(head);
+    insert_node_at_ith_pos(head,2,60);
+    cout << print_linked_list(head);
 }
