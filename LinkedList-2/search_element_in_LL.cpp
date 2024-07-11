@@ -11,13 +11,15 @@ public:
         next = NULL;
     }    
 };
-
-int length(Node *head){
-    if(head == NULL){
-        return 0;
+bool find_element(Node *head,int data){
+    while(head != NULL){
+        if(head->data == data){
+            return true;
+        }
+        head = head->next;
     }
-    int small_len = length(head->next);
-    return small_len+1;
+    return false;
+
 }
 
 int main(){
@@ -33,5 +35,5 @@ int main(){
     n2.next = &n3;
     n3.next = &n4;
     n4.next = &n5;
-    cout << length(head);
+    cout << find_element(head,4);
 }

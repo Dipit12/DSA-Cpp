@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-class Node{
+class Node(){
 public:
     int data;
     Node *next;
@@ -10,14 +10,16 @@ public:
         this->data = data;
         next = NULL;
     }    
-};
+}
 
-int length(Node *head){
+bool search_element(Node *head,int data){
     if(head == NULL){
-        return 0;
+        return false;
     }
-    int small_len = length(head->next);
-    return small_len+1;
+    if(head->data == data){
+        return true;
+    }
+    return search_element(head->next,data);
 }
 
 int main(){
@@ -33,5 +35,5 @@ int main(){
     n2.next = &n3;
     n3.next = &n4;
     n4.next = &n5;
-    cout << length(head);
+    cout << search_element(head,4);
 }
