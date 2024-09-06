@@ -1,0 +1,17 @@
+// Just like stacks, queue is a data structure
+It's an abstract data type, meaning there is a specific order in which you can insert/delete your elements
+Follows the principle of FIFO - first in first out
+In stack, entry and exit points both are same but in a queue entry and exit points are different
+
+Operations we can perform in a queue:
+1. Inserting an element - push()
+2. Deleting an element - pop()
+3. Access element - can only access the front element - front()
+4. size() - returns size of the queue
+5. isEmpty - return bool value 
+
+A queue can be implemented using 2 ways:
+1. Arrays
+2. LinkedList
+
+After implementing the queue using arrays, there would be a size constraint to remove that we would use Dynamic queue

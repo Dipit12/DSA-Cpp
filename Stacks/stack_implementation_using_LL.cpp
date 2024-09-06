@@ -27,7 +27,7 @@ class Stack{
         }
 
         bool isEmpty(){
-            if(head == NULL){
+            if(size==0){
                 return true;
             }
             else{
@@ -35,7 +35,10 @@ class Stack{
             }
         }
         void push(T element){
-            
+            Node *n = new Node(element)
+            n->next = head;
+            head = n;
+            size++;
         }
 
         void pop(){}

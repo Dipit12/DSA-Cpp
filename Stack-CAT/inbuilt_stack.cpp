@@ -18,4 +18,10 @@ int main(){
     cout << s.top() << endl;
     cout << s.size() << endl;
     cout << s.empty() << endl;
+
+    while(!s.empty()){
+        cout << s.top() << endl;
+        s.pop();
+    }
+    s.empty();
 }

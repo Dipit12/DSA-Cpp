@@ -63,4 +63,10 @@ int main(){
     p1.setB(1.342);
 
     cout << p1.getA() << " " << p1.getB() << endl;
+
+    // creating an triplet using the pair class
+    Pair2<Pair2<int,int>,int> p;
+    p.setB(10);
+    p.setA(Pair2<int,int>(20,30));
+    cout << p.getB() << " " << p.getA().getA() << " " << p.getA().getB() << endl;
 }

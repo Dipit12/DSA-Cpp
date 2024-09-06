@@ -1,0 +1,2 @@
+// Queue - It's a ADT
+follows the principle of FIFO - first in first out 

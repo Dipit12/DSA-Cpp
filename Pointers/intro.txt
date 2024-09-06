@@ -1,0 +1,20 @@
+// Pointers in C++
+when we say that
+int num = 5;
+a block is created in the memory called num, whose value is 5
+cout << num;
+every variable is mapped to an address
+when we say cout << num, then at the backend, the address is found out of the varibale and its value is displayed to the screen
+
+Pointer is a variable that stores the address of another variable
+Never ever declare an empty pointer ie int *ptr;
+this is a bad programming practise since we dont know where this pointer is pointing
+Datatype of variable and pointer should be same
+eg: int num =5; -> int *ptr = &num;
+    char ch = 'A' -> char *ptr = &ch;
+
+In *ptr, * is the dereferencing operator
+num and *ptr point towards the same value
+
+When we dont know where to point the pointer, we point it to 0
+
