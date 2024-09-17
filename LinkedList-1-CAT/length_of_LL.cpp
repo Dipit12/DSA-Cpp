@@ -1,28 +1,32 @@
-// if we know the head of the LL, we can generate the whole LL
 #include <iostream>
 using namespace std;
 
 class Node{
-public:
+public:    
     int data;
     Node *next;
-
     Node(int data){
         this->data = data;
         next = NULL;
-    }    
+    }
 };
 
-void print(Node *head){
-    while(head != NULL){
-        cout << head-> data << " ";
-        head = head->next;
-    }
 
+int length(Node *head){
+    if(head == NULL){
+        cout << "LinkedList is empty" << endl;
+    }
+    int count = 0;
+    Node *temp = head;
+    while(temp != NULL){
+        count++;
+        temp = temp->next;
+    }
+    return count;
 }
+
 int main(){
-    // creating objects statically
-    Node n1(1);
+     Node n1(1);
     Node *head = &n1;
     Node n2(2);
     Node n3(3);
@@ -34,5 +38,5 @@ int main(){
     n3.next = &n4;
     n4.next = &n5;
 
-    print(head);
+    cout << length(head);
 }
