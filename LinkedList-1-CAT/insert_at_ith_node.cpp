@@ -66,5 +66,7 @@ int main(){
     n2.next = &n3;
     n3.next = &n4;
     n4.next = &n5;
-
+    print(head);
+    insert_at_ith_node(head,3,100);
+    print(head);
 }

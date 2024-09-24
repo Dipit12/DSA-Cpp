@@ -2,40 +2,34 @@
 using namespace std;
 
 class Node{
-public:    
+public:
     int data;
     Node *next;
+
     Node(int data){
         this->data = data;
         next = NULL;
-    }
+    }    
 };
-
 int length(Node *head){
     if(head == NULL){
-        cout << "LinkedList is empty" << endl;
+        return 0;
     }
-    int count = 0;
-    Node *temp = head;
-    while(temp != NULL){
-        count++;
-        temp = temp->next;
-    }
-    return count;
-}
+    int small_len = length(head->next);
 
+    return small_len+1;
+}
 int main(){
-     Node n1(1);
+    Node n1(1);
     Node *head = &n1;
     Node n2(2);
     Node n3(3);
     Node n4(4);
-    Node n5(5);
 
     n1.next = &n2;
     n2.next = &n3;
     n3.next = &n4;
-    n4.next = &n5;
 
+    cout << head->data << " " << n1.data << " " << n2.data << " " << n3.data << " " << n4.data << endl;
     cout << length(head);
 }
