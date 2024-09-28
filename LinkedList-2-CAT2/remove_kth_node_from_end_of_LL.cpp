@@ -18,6 +18,15 @@ void print_LL(Node *head) {
         head = head->next;
     }
 }
+
+int length(Node *head){
+    if(head == NULL){
+        return 0;
+    }
+    int small_len = length(head->next);
+
+    return small_len+1;
+}
 Node *remove_kth_node_from_end(Node *head, int k){
     Node *one = head;
     Node *two = head;
@@ -25,7 +34,9 @@ Node *remove_kth_node_from_end(Node *head, int k){
     while(k--){
         two = two->next;
     }
-
+    if(two == NULL){
+        return one->next;
+    }
     while(two->next != NULL){
         one = one->next;
         two = two->next;
