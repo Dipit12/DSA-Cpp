@@ -71,7 +71,46 @@ Node * insertIntoBST(Node *root, int data){
     }
     return root;
 }
-
+Node *deleteFromBST(Node *root, int data){
+    // base-case
+    if(root == nullptr){
+        return root;
+    }
+    if(root->data == data){
+        // 0 child case
+        if(root->left == nullptr && root->right == nullptr){
+            delete root;
+            return nullptr;
+        }
+        // 1 child
+            // left child
+            if(root->left != nullptr && root->right == nullptr){
+               Node *temp = root->left;
+               delete root;
+               return temp;
+            }
+            // right child
+            if(root->left == nullptr && root->right != nullptr){
+               Node *temp = root->right;
+               delete root;
+               return temp;
+            }
+        // 2 child case
+            if(root->left != nullptr && root->right != nullptr){
+                int min = minValue(root->right)->data;
+                root->data = min;
+                root->right  = deleteFromBST(root->right, min);
+                return root;
+            }
+    else if(root->data > data){
+        root->left = deleteFromBST(root->left, data);
+        return root;
+    }
+    else{
+        root->right = deleteFromBST(root->right, data);
+        return root;
+    }}
+}
 void takeInput(Node *root){
     int data;
     cin >> data;
